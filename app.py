@@ -17,3 +17,8 @@ def scale(payload):
     scaler = StandardScaler().fit(payload)
     scaled_adhoc_predict = scaler.transform(payload)
     return scaled_adhoc_predict
+
+@app.route("/")
+def home():
+    html = "<h3>Sklearn Prediction Home: From Azure Pipelines (Continuous Delivery)</h3>"
+    return html.format(format)
